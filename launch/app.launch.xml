@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="ros2_tmplt_py" exec="publisher"/>
+    <node pkg="ros2_tmplt_cpp" exec="subscriber"/>
+
+    <!-- Insert an other launch file from the same folder : can be python launch file -->
+    <!-- <include file=”$(find-pkg-share ros2_tmplt_launch_bringup)/launch/app.launch.py” /> -->
+</launch>
