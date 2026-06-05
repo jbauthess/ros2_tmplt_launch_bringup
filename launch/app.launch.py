@@ -9,6 +9,9 @@ def generate_launch_description():    # this function shall be called with this 
     node1 = Node(
         package="ros2_tmplt_py",
         executable="client"
+        # namespace=”/namespace_name”, !!! Remove preceding / in topic name when remapping…
+        # remappings=[(“topic_name”, “new_topic_name”)],
+        # parameters=[{“param_name”:”param_value”}],
     )
 
     node2 = Node(
