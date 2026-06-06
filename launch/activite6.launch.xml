@@ -1,0 +1,40 @@
+<launch>
+<!--  
+namespace is applied first, before remapping. 
+If you want to remap topic namespace : you need to remove the / in the topic_name in the <remap> 
+-->
+    <node pkg="ros2_tmplt_py" exec="parameter" name="my_robot_new_station_giskard">
+        <!-- Load params/configuration from file -->
+        <param from="$(find-pkg-share ros2_tmplt_launch_bringup)/config/activite6.yaml" />
+        <remap from="print_name" to="/robot_news" />
+
+    </node>
+    <node pkg="ros2_tmplt_py" exec="parameter" name="my_robot_new_station_bb8">
+        <!-- Load params/configuration from file -->
+        <param from="$(find-pkg-share ros2_tmplt_launch_bringup)/config/activite6.yaml" />
+        <remap from="print_name" to="/robot_news" />
+    </node>
+    <node pkg="ros2_tmplt_py" exec="parameter" name="my_robot_new_station_daneel">
+        <!-- Load params/configuration from file -->
+        <param from="$(find-pkg-share ros2_tmplt_launch_bringup)/config/activite6.yaml" />
+        <remap from="print_name" to="/robot_news" />
+    </node>
+    <node pkg="ros2_tmplt_cpp" exec="parameter" name="my_robot_new_station_jander">
+        <!-- Load params/configuration from file -->
+        <param from="$(find-pkg-share ros2_tmplt_launch_bringup)/config/activite6.yaml" />
+        <remap from="print_name" to="/robot_news" />
+    </node>
+    <node pkg="ros2_tmplt_cpp" exec="parameter" name="my_robot_new_station_c3po">
+        <!-- Load params/configuration from file -->
+        <param from="$(find-pkg-share ros2_tmplt_launch_bringup)/config/activite6.yaml" />
+        <remap from="print_name" to="/robot_news" />
+    </node>
+
+    <node pkg="ros2_tmplt_cpp" exec="subscriber" name="smart_phone">
+        <remap from="counter" to="/robot_news" />
+    </node>
+
+    <!-- Insert an other launch file from the same folder : can be python launch file -->
+    <!-- <include file=”$(find-pkg-share ros2_tmplt_launch_bringup)/launch/app.launch.py” /> -->
+</launch>
+
